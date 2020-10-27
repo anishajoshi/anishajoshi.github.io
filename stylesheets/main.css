@@ -193,7 +193,7 @@ img {
 
 /* ---------------------------- Banner -----------------------------------*/
 #banner {
-	background-image: url(/assets/banner.jpg);
+	background-image: url(assets/banner.JPG);
 	background-size: cover;
 	background-position: top center;
 	background-attachment: fixed;
