@@ -1,0 +1,807 @@
+/* ---------------------------- Overall -----------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+	font-family: 'Montserrat', sans-serif;
+	scroll-behavior: smooth;
+	background-color: #d8e2dc;
+}
+
+a {
+	text-decoration: none;
+}
+
+p {
+	color: black;
+	font-size: 1.4rem;
+	margin-top: 5px;
+	line-height: 2.5rem;
+	font-weight: 300;
+	letter-spacing: .05rem;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.container {
+	min-height: 100vh;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.section-title {
+	font-size: 4rem;
+	font-weight: 300;
+	color: black;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	text-align: center;
+}
+.section-title span {
+	color: #006D77;
+}
+
+.title h1{
+	font-size: 3rem;
+	text-transform: uppercase;
+	color: #006D77;
+}
+
+/* ---------------------------- End Overall -------------------------------*/
+
+/* ---------------------------- Nav Bar -----------------------------------*/
+#header {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: auto;
+}
+#header .header {
+	min-height: 8vh;
+	background-color: rgba(31, 30, 30, 0.24);
+	transition: .3s ease background-color;
+}
+
+.header .nav-bar{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	max-width: 1300px;
+	padding: 0 10px;
+}
+
+.header .nav-list ul{
+	list-style: none;
+	position: absolute;
+	background-color: #83c5be;
+	width: 100vw;
+	height: 100vh;
+	left: 100%;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	overflow-x: : hidden;
+	transition: .5s ease left;
+}
+
+#header .nav-list ul.active{
+	left: 0;
+}
+
+.header .nav-list ul a{
+	font-size: 2.5rem;
+	font-weight: 500;
+	letter-spacing: .2rem;
+	text-decoration: none;
+	color: #EDF6F9;
+	text-transform: uppercase;
+	padding: 20px;
+	display: block;
+}
+
+#header .nav-list ul a::after {
+	content: attr(data-after);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	color: rgba(0, 119, 107, 0.1);
+	font-size: 8.7rem;
+	letter-spacing: 50px;
+	z-index: -1;
+	transition: .3s ease letter-spacing;
+}
+
+#header .nav-list ul li:hover a::after {
+	transform: translate(-50%, -50%) scale(1);
+	letter-spacing: initial;
+}
+
+#header .nav-list ul li:hover a {
+	color: #006D77;
+}
+
+#header .menu {
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	border: 3px solid #EDF6F9;
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	cursor: pointer;
+	transform: scale(.8);
+	margin-right: 20px;
+}
+
+#header .menu .bar {
+	height: 2px;
+	width: 30px;
+	position: relative;
+	background-color: #EDF6F9;
+	z-index: -1;
+}
+#header .menu .bar::after,
+#header .menu .bar::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: #EDF6F9;
+	transition: .3s ease;
+	transition-property: top, bottom;
+}
+#header .menu .bar::after {
+	top: 8px;
+}
+#header .menu .bar::before {
+	bottom: 8px;
+}
+#header .menu.active .bar::before {
+	bottom: 0;
+}
+#header .menu.active .bar::after {
+	top: 0;
+}
+
+/* ---------------------------- End Nav Bar ------------------------------*/
+
+/* ---------------------------- Banner -----------------------------------*/
+#banner {
+	background-image: url(/Users/anishajoshi/Desktop/Me/Projects/Portfolio/assets/banner.jpg);
+	background-size: cover;
+	background-position: top center;
+	background-attachment: fixed;
+	position: relative;
+	z-index: 1;
+}
+
+#banner::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.7;
+	z-index: -1;
+}
+
+#banner h1 {
+	display: block;
+	width: fit-content;
+	font-size: 4rem;
+	position: relative;
+	color: transparent;
+	animation: text_reveal .5s ease forwards;
+	animation-delay: 1s;
+}
+
+#banner h1:nth-child(1) {
+	animation-delay: 1s;
+}
+#banner h1:nth-child(2) {
+	animation-delay: 2s;
+}
+#banner h1:nth-child(3) {
+	animation: text_reveal_name .5s ease forwards;
+	animation-delay: 3s;
+}
+
+#banner h1 span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 0;
+	background-color: #006D77;
+	animation: text_reveal_box 1s ease;
+	animation-delay: .5s;
+}
+
+#banner h1:nth-child(1) span {
+	animation-delay: .5s;
+}
+#banner h1:nth-child(2) span {
+	animation-delay: 1.5s;
+}
+#banner h1:nth-child(3) span {
+	animation-delay: 2.5s;
+}
+
+#banner .banner {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 50px;
+	justify-content: flex-start;
+}
+
+#banner .btn {
+	display: inline-block;
+	padding: 10px 30px;
+	color: #EDF6F9;
+	background-color: transparent;
+	border: 2px solid #006D77;
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: .1rem;
+	margin-top: 30px;
+	transition: .3s ease;
+	transition-property: background-color, color;
+}
+
+#banner .btn:hover {
+	color: #EDF6F9;
+	background-color: #006D77;
+}
+
+/* ---------------------------- End Banner -----------------------------------*/
+
+/* ---------------------------- About Me -----------------------------------*/
+#about .about {
+	display: flex;
+	flex-direction: column-reverse;
+	text-align: center;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 60px 20px 0px;
+}
+
+#about .col-left {
+	width: 250px;
+	height: 360px;
+}
+
+#about .col-right{
+	width: 100%;
+}
+
+#about .col-right h2{
+	font-size: 2rem;
+	font-weight: 500;
+	letter-spacing: .2rem
+}
+
+#about .col-right p{
+	margin-bottom: 20px;
+}
+
+#about .col-left .about-img{
+	height: 100%
+	width: 100%;
+	position: relative;
+	border: 10px solid #83c5be;
+}
+
+#about .col-left .about-img::after {
+	content: '';
+	position: absolute;
+	left: -33px;
+	top: 19px;
+	height: 100%;
+	width: 100%;
+	border: 7px solid #006D77;
+	z-index: -1;
+}
+
+/* ---------------------------- End About Me -----------------------------------*/
+
+/* ---------------------------- Projects -----------------------------------*/
+#projects .projects{
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 60px 20px 0px;
+}
+
+#projects .projects-header h1{
+	margin-bottom: 25px;
+}
+
+#projects .all-projects{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+#projects .project-item{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 80%;
+	margin: 20px auto;
+	overflow: hidden;
+	border-radius: 0px;
+}
+
+#projects .project-info{
+	padding: 30px;
+	flex-basis: 50%
+	background-color: #EDF6F9;
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	background-image: linear-gradient(60deg, #006D77 0%, #83C5BE 100%);
+	color: #EDF6F9;
+}
+
+#projects .project-info h1{
+	font-size: 4rem;
+	font-weight: 500;
+}
+
+#projects .project-info h2{
+	font-size: 2rem;
+	font-weight: 300;
+	margin-top: 10px;
+}
+
+#projects .project-img{
+	flex-basis: 50%;
+	height: 200px;
+	overflow: hidden;
+	position: relative;
+}
+
+#projects .project-img img{
+	transition: .3s ease transform;
+}
+
+#projects .project-item:hover .project-img img{
+	transform: scale(1.1);
+}
+
+#projects .btn {
+	display: inline-block;
+	padding: 10px 30px;
+	color: #EDF6F9;
+	background-color: transparent;
+	border: 2px solid #EDF6F9;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	letter-spacing: .1rem;
+	margin-top: 20px;
+	transition: .3s ease;
+	transition-property: background-color, color;
+}
+
+#projects .btn:hover {
+	color: black;
+}
+/* ---------------------------- End Projects -----------------------------------*/
+
+/*  ---------------------------- Experiences ------------------------------------*/
+
+#experiences .experiences {
+	flex-direction: column;
+	text-align: center;
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+
+#experiences .experiences-header h1{
+	margin-bottom: 25px;
+}
+
+#experiences .experience-top {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+#experiences .experience-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 50px;
+}
+
+#experiences .experience-item {
+	flex-basis: 80%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	padding: 30px;
+	background-size: cover;
+	margin: 10px 5%;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+
+#experiences .experience-item::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: #83C5BE;
+	opacity: .9;
+	z-index: -1;
+}
+
+#experiences .experience-bottom .icon {
+	height: 80px;
+	width: 80px;
+	margin-bottom: 20px;
+}
+
+#experiences .experience-item h2 {
+	font-size: 2rem;
+	color: #006D77;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+#experiences .experience-item p {
+	color: #EDF6F9;
+	text-align: left;
+}
+/*  ---------------------------- End Experiences --------------------------------*/
+
+/*  ---------------------------- Contact ----------------------------------------*/
+
+#contact .contact{
+	padding: 60px 20px 0px;
+}
+
+#contact .contact-header h1{
+	margin-bottom: 25px;
+}
+
+#contact .contact-info{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#contact .card{
+    position: relative;
+    flex: 1;
+    height: 140px;
+    background-color: #83C5BE;
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact .icon{
+    font-size: 40px;
+    color: #006D77;
+    transition: .3s linear;
+}
+
+#contact .card:hover .icon{
+    transform: scale(4);
+    opacity: 0;
+}
+
+#contact .card-content h3,
+#contact .card-content span{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    opacity: 0;
+}
+
+#contact .card-content h3{
+    top: 20px;
+    text-transform: uppercase;
+    color: #006D77;
+}
+
+#contact .card-content span{
+    bottom: 20px;
+    color: #000000;
+    font-weight: 500;
+}
+
+#contact .card:hover h3{
+    opacity: 1;
+    top: 46px;
+    transition: .3s linear .3s;
+}
+
+#contact .card:hover span{
+    opacity: 1;
+    bottom: 46px;
+    transition: .3s linear .3s;
+}
+
+#contact .contact-form{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#contact .contact-form input, .contact-form textarea{
+  width: 100%;
+  height: 50px;
+  margin: 10px 0;
+  background-color: #83c5be;
+  border: none;
+  outline: none;
+  padding: 20px;
+  color: #006d77;
+}
+
+#contact .contact-form textarea::-webkit-input-placeholder {
+    color: #006d77;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#contact .contact-form input::-webkit-input-placeholder {
+    color: #006d77;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#contact .nameZone, .emailZone{
+  max-width: calc(50% - 10px);
+}
+
+#contact .messageZone{
+  min-height: 200px;
+  resize: vertical;
+}
+
+#contact .contact-form .btn{
+  width: 100%;
+  background-color: transparent;
+  color: #006d77;
+  font-size: 16px;
+  border: 2px solid #83c5be;
+  padding: 0;
+  cursor: pointer;
+  transition: .3s linear;
+}
+
+#contact .contact-form .btn:hover{
+  background-color: #83c5be;
+}
+
+
+/*  ---------------------------- End Contact -----------------------------------*/
+
+/* ---------------------------- Footer -----------------------------------------*/
+#footer {
+	background-color: #83C5BE;
+}
+
+#footer .footer {
+	min-height: 100px;
+	flex-direction: column;
+	padding-top: 50px;
+	padding-bottom: 30px;
+}
+
+/* ---------------------------- End Footer -------------------------------------*/
+
+
+/* ---------------------------- Keyframes --------------------------------------*/
+
+@keyframes text_reveal_box {
+	50% {
+		width: 100%;
+		left: 0;
+	}
+	100% {
+		width: 0;
+		left: 100%;
+	}
+}
+@keyframes text_reveal {
+	100% {
+		color: #EDF6F9;
+	}
+}
+@keyframes text_reveal_name {
+	100% {
+		color: #006D77;
+		font-weight: 500;
+	}
+}
+
+/* ---------------------------- End Keyframes --------------------------------*/
+
+/* ---------------------------- For Ipad Sized Screens -----------------------*/
+
+@media only screen and (min-width: 768px){
+	#banner .btn {
+		font-size: 2.5rem;
+		padding: 20px 60px;
+	}
+
+	h1.section-title {
+		font-size: 6rem;
+	}
+
+	#banner h1{
+		font-size: 7rem;
+	}
+
+	#projects .project-item{
+		flex-direction: row;
+		height: 280px;
+		width: 100%;
+		margin: 10px auto;
+	}
+
+	#projects .project-item:nth-child(even) {
+		flex-direction: row-reverse;
+	}
+
+	#projects .all-projects .project-info {
+		height: 100%;
+		width: 70%
+	}
+
+	#projects .all-projects .project-img {
+		height: 100%;
+		width: 50%
+	}
+
+	#about .about {
+		flex-direction: row;
+		padding: 0px 10px;
+	}
+
+	#about .col-left {
+		width: 600px;
+		height: 300px;
+		padding-left: 60px;
+	}
+
+	#about .about .col-left .about-img::after {
+		left: -45px;
+		top: 34px;
+		height: 98%:
+		width: 98%;
+		border: 10px solid #006D77;
+	}
+
+	#about .col-right {
+		text-align: left;
+		padding: 30px;
+	}
+
+	#about .col-right h1{
+		text-align: left;
+	}
+
+	#contact .card{
+        max-width: 500px;
+    }
+
+  	#experiences .experience-bottom .experience-item {
+		flex-basis: 45%;
+		margin: 2.5%;
+	}
+
+	#experiences .experience-item {
+		width: 1000px;
+		height: 300px;
+
+	}
+}
+
+/* ---------------------------- End Ipad Sized Screens -----------------------*/
+
+/* ---------------------------- For Desktop Sized Screens --------------------*/
+@media only screen and (min-width: 1200px) {
+	/* header */
+	#header .menu {
+		display: none;
+	}
+
+	#header .nav-list ul {
+		position: initial;
+		display: block;
+		height: auto;
+		width: fit-content;
+		background-color: transparent;
+	}
+
+	#header .nav-list ul li {
+		display: inline-block;
+	}
+
+	#header .nav-list ul li a {
+		font-size: 2rem;
+	}
+
+	#header .nav-list ul a:after {
+		display: none;
+	}
+
+	#about .about {
+		padding: 0px 0px;
+	}
+
+	#experiences .experience-bottom .experience-item {
+		flex-basis: 22%;
+		margin: 1.5%;
+	}
+
+	#experiences .experience-item {
+		width: 1700px;
+		height: 300px;
+
+	}
+
+  	#contact .nameZone, .emailZone{
+  		max-width: 100%;
+  }
+
+}
+/* ---------------------------- End Desktop Sized Screens --------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
