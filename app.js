@@ -1,5 +1,4 @@
 //making the anvigation bar work
-
 const menu = document.querySelector('.header .nav-bar .nav-list .menu');
 const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
 const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a')
