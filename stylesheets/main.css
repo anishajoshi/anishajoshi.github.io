@@ -560,6 +560,17 @@ img {
 	padding-bottom: 30px;
 }
 
+#footer  .footer.container .subtitle {
+    font-size: 15px;
+    color: #EDF6F9;
+	text-align: center;
+  }
+
+#footer .footer.container .subtitle .footer-title-heart {
+    color: rgb(243, 47, 83);
+}
+
+
 /* ---------------------------- End Footer -------------------------------------*/
 
 
@@ -640,7 +651,7 @@ img {
 	#about .about .col-left .about-img::after {
 		left: -45px;
 		top: 34px;
-		height: 98%:
+		height: 98%;
 		width: 98%;
 		border: 10px solid #006D77;
 	}
@@ -703,11 +714,6 @@ img {
 		padding: 0px 0px;
 	}
 
-	#experiences .experience-bottom .experience-item {
-		flex-basis: 22%;
-		margin: 1.5%;
-	}
-
 	#experiences .experience-item {
 		width: 1700px;
 		height: 300px;
@@ -716,7 +722,16 @@ img {
 
   	#contact .nameZone, .emailZone{
   		max-width: 100%;
-  }
+  	}
+
+	#banner h1 {
+		font-size: 4rem;
+	}
+
+	#banner .btn {
+		padding: 10px 30px;
+		font-size: 1.5rem;
+	}
 
 }
 /* ---------------------------- End Desktop Sized Screens --------------------*/
