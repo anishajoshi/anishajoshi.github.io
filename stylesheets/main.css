@@ -351,6 +351,9 @@ img {
 }
 
 #projects .project-item{
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s ease, visibility 0s linear 0.5s;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -360,6 +363,12 @@ img {
 	overflow: hidden;
 	border-radius: 0px;
 }
+
+#projects .project-item.show {
+	opacity: 1;
+	visibility: visible;
+	transition-delay: 0s;
+  }
 
 #projects .project-info{
 	padding: 30px;
@@ -556,7 +565,7 @@ img {
 #footer .footer {
 	min-height: 100px;
 	flex-direction: column;
-	padding-top: 50px;
+	padding-top: 30px;
 	padding-bottom: 30px;
 }
 
