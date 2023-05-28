@@ -351,9 +351,6 @@ img {
 }
 
 #projects .project-item{
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 0.5s ease, visibility 0s linear 0.5s;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -361,7 +358,7 @@ img {
 	width: 80%;
 	margin: 20px auto;
 	overflow: hidden;
-	border-radius: 0px;
+	border-radius: 5px;
 }
 
 #projects .project-item.show {
@@ -373,14 +370,15 @@ img {
 #projects .project-info{
 	padding: 30px;
 	flex-basis: 50%;
-	background-color: #EDF6F9;
 	height: 100%;
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
 	flex-direction: column;
-	background-image: linear-gradient(60deg, #006D77 0%, #83C5BE 100%);
-	color: #EDF6F9;
+	color: #006D77;
+	border: 2px solid #006D77;
+	border-radius: 5px;
+	margin-right: 20px;
 }
 
 #projects .project-info h1{
@@ -399,22 +397,17 @@ img {
 	height: 200px;
 	overflow: hidden;
 	position: relative;
-}
-
-#projects .project-img img{
-	transition: .3s ease transform;
-}
-
-#projects .project-item:hover .project-img img{
-	transform: scale(1.1);
+	border: 2px solid #006D77;
+	border-radius: 5px;
+	margin-left: 20px;
 }
 
 #projects .btn {
 	display: inline-block;
 	padding: 10px 30px;
-	color: #EDF6F9;
+	color: #006D77;
 	background-color: transparent;
-	border: 2px solid #EDF6F9;
+	border: 2px solid #006D77;
 	font-size: 1.5rem;
 	text-transform: uppercase;
 	letter-spacing: .1rem;
@@ -613,8 +606,8 @@ img {
 
 @media only screen and (min-width: 768px){
 	#banner .btn {
-		font-size: 2.5rem;
-		padding: 20px 60px;
+		font-size: 2rem;
+		padding: 15px 35px;
 	}
 
 	h1.section-title {
@@ -622,7 +615,7 @@ img {
 	}
 
 	#banner h1{
-		font-size: 7rem;
+		font-size: 4rem;
 	}
 
 	#projects .project-item{
@@ -630,10 +623,6 @@ img {
 		height: 280px;
 		width: 100%;
 		margin: 10px auto;
-	}
-
-	#projects .project-item:nth-child(even) {
-		flex-direction: row-reverse;
 	}
 
 	#projects .all-projects .project-info {

@@ -3,14 +3,10 @@ document.addEventListener("DOMContentLoaded", function() {
 	var projectItems = document.querySelectorAll(".project-item");
 
 	for (var i = 0; i < projectItems.length; i++) {
-	  // Delay the appearance of each project item
 	  (function(index) {
 		setTimeout(function() {
-		  // Add a CSS class to show the project item
 		  projectItems[index].classList.add("show");
-		  // projectItems[index].style.opacity = "1";
-		  // projectItems[index].style.visibility = "visible";
-		}, index * 100); // Change the delay duration as per your preference
+		}, index * 300); 
 	  })(i);
 	}
 	
